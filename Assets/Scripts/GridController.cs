@@ -49,12 +49,19 @@ public class GridController : MonoBehaviour
             {
                 connectedBoxes[i].ResetBox();
             }
-
-            connectedBoxes = new List<Box>();
         }
-        else
+
+        connectedBoxes = new List<Box>();
+    }
+
+    public void ResetGrid()
+    {
+        for (int i = 0; i < grid.GetLength(0); i++)
         {
-            connectedBoxes = new List<Box>();
+            for (int j = 0; j < grid.GetLength(1); j++)
+            {
+                BoxPool.Instance.PutBackIntoPool(grid[i, j]);
+            }
         }
     }
 }

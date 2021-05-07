@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GridController.Instance.ResetGrid();
+        UIManager.Instance.ChangeActivityOfUIElements(UIManager.Instance.levelElements, false);
+        UIManager.Instance.ChangeActivityOfUIElements(UIManager.Instance.startElements, true);
     }
 }

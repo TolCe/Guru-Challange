@@ -30,9 +30,7 @@ public class GridCreator : MonoBehaviour
 
             for (int j = 0; j < gridWidth; j++)
             {
-                GameObject box = Instantiate(Resources.Load("Box") as GameObject, transform);
-                box.transform.position = new Vector2(xPos, yPos);
-                GridController.Instance.SetGridElement(i, j, box.GetComponent<Box>());
+                GridController.Instance.SetGridElement(i, j, BoxPool.Instance.TakeFromPool(transform, new Vector2(xPos, yPos)));
                 xPos += 2.75f;
             }
 

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     public bool isSelected;
-    public bool isInTheBox;
     GameObject attachedX;
     Collider boxColl;
     [SerializeField] int[] gridIndex;

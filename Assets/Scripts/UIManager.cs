@@ -9,8 +9,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject startElements;
     public GameObject levelElements;
-    public Text widthText;
-    public Slider widthSlider;
+    public Text sizeText;
+    public Slider sizeSlider;
 
     private void Awake()
     {
@@ -35,8 +35,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdateWidth()
     {
-        ChangeText(widthText, "Grid Size: " + (widthSlider.value + 3) + "x" + (widthSlider.value + 3));
-        GridCreator.Instance.gridWidth = (int)widthSlider.value + 3;
+        ChangeText(sizeText, "Grid Size: " + (sizeSlider.value + 3) + "x" + (sizeSlider.value + 3));
+        GridCreator.Instance.gridWidth = (int)sizeSlider.value + 3;
     }
 
     public void ChangeActivityOfUIElements(GameObject anObject, bool state)
